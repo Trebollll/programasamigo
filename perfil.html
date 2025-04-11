@@ -1,0 +1,184 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas Amigo - Perfil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 md:p-8">
+            <div class="border-t pt-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Perfil</h2>
+                    <div class="flex justify-end space-x-4 pt-6">
+                        <form action="registro.html" method="get">
+                            <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Editar Perfil
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            <div class="flex flex-col items-center mb-8">
+                <div class="relative w-32 h-32 md:w-40 md:h-40 mb-4">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Foto de perfil" class="rounded-full w-full h-full object-cover border-4 border-blue-100 shadow-lg">
+                </div>
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Juan Pérez González</h1>
+                <p class="text-gray-600 mt-2">Desarrollador Senior</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h2 class="font-semibold text-gray-700">Fecha de Nacimiento</h2>
+                        <p class="text-gray-600">15 de Marzo, 1985</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h2 class="font-semibold text-gray-700">Edad</h2>
+                        <p class="text-gray-600">38 años</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h2 class="font-semibold text-gray-700">Fecha de Ingreso</h2>
+                        <p class="text-gray-600">1 de Enero, 2022</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h2 class="font-semibold text-gray-700">Tipo de Contrato</h2>
+                        <p class="text-gray-600">Indefinido</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h2 class="font-semibold text-gray-700">Área</h2>
+                        <p class="text-gray-600">Tecnología</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h2 class="font-semibold text-gray-700">Estado</h2>
+                        <p class="text-gray-600">Activo</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t pt-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">Documentación</h2>
+                    <div class="flex justify-end space-x-4 pt-6">
+                        <form action="gestion.html" method="get">
+                            <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Editar Documentación
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <details class="bg-gray-50 rounded-lg p-4" close>
+                        <summary class="text-lg font-semibold text-gray-700 cursor-pointer hover:text-blue-500">Contratación</summary>
+                        <ul class="space-y-2 mt-3 ml-4">
+                            <li class="flex items-center space-x-2 hover:bg-white p-2 rounded cursor-pointer transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Contrato</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                            <li class="flex items-center space-x-2 hover:bg-white p-2 rounded cursor-pointer transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Certificado de Nacimiento</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                        </ul>
+                    </details>
+
+                    <details class="bg-gray-50 rounded-lg p-4">
+                        <summary class="text-lg font-semibold text-gray-700 cursor-pointer hover:text-blue-500">Contratación y Renovación Semestral</summary>
+                        <ul class="space-y-2 mt-3 ml-4">
+                            <li class="flex items-center space-x-2 hover:bg-white p-2 rounded cursor-pointer transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Anexos</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                            <li class="flex items-center space-x-2 hover:bg-white p-2 rounded cursor-pointer transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Certificado de Nacimiento</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                        </ul>
+                    </details>
+
+                    <details class="bg-gray-50 rounded-lg p-4">
+                        <summary class="text-lg font-semibold text-gray-700 cursor-pointer hover:text-blue-500">Durante el Transcurso del Contrato</summary>
+                        <ul class="space-y-2 mt-3 ml-4">
+                            <li class="flex items-center space-x-2 hover:bg-white p-2 rounded cursor-pointer transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Horas Extras</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                            <li class="flex items-center space-x-2 hover:bg-white p-2 rounded cursor-pointer transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Anexos</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                        </ul>
+                    </details>
+
+                    <details class="bg-gray-50 rounded-lg p-4">
+                        <summary class="text-lg font-semibold text-gray-700 cursor-pointer hover:text-blue-500">Desvinculación (Solo personal finiquitado)</summary>
+                        <ul class="space-y-2 mt-3 ml-4">
+                            <li class="flex items-center space-x-2 hover:bg-white p-2 rounded cursor-pointer transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Finiquito</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                        </ul>
+                    </details>
+                    <details class="bg-gray-50 rounded-lg p-4">
+                        <summary class="text-lg font-semibold text-gray-700 cursor-pointer hover:text-blue-500">Capacitaciones</summary>
+                        <ul class="space-y-2 mt-3 ml-4">
+                            <li class="flex items-center space-x-2 hover:bg-white p-2 rounded cursor-pointer transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Capacitación 1</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                            <li class="flex items-center space-x-2 hover:bg-white p-2 rounded cursor-pointer transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Capacitación 2</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                            <li class="flex items-center space-x-2 hover:bg-white p-2 rounded cursor-pointer transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Capacitación 3</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                            <li class="flex items-center p-2 rounded hover:bg-white transition-colors">
+                                <div class="flex items-center space-x-2 flex-1">
+                                    <i class="far fa-file-alt text-blue-500"></i>
+                                    <span class="text-gray-700">Capacitación 4</span>
+                                </div>
+                                <a href="ruta/capacitacion1.pdf" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200">Ver</a>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

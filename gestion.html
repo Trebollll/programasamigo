@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Programas Amigo - Gestión de Documentos de Trabajadores</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @media print {
+      input[type="file"], button {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-5xl mx-auto p-6">
+    <div class="mb-6 text-center">
+      <h1 class="text-3xl font-bold mb-2">Gestión de Documentos de Trabajadores</h1>
+      <div class="text-xl font-semibold text-blue-700">Trabajador: Juan Pérez</div>
+    </div>
+
+    <div class="space-y-6">
+
+      <!-- CONTRATO -->
+      <details class="bg-white rounded-lg shadow p-4">
+        <summary class="text-lg font-semibold text-gray-700 cursor-pointer hover:text-blue-500">Contrato</summary>
+        <ul class="mt-4 space-y-3 ml-4">
+          <!-- Documento 1 -->
+          <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+            <span class="text-gray-700">Contrato</span>
+            <span class="px-3 py-1 rounded-full text-white bg-green-500 text-sm">Aprobado</span>
+            <div class="flex items-center space-x-2">
+              <input type="file" class="text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              <button class="text-blue-600 hover:text-blue-800" title="Ver"><i data-lucide="eye" class="w-5 h-5"></i></button>
+              <button class="text-red-600 hover:text-red-800" title="Eliminar"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
+            </div>
+          </li>
+
+          <!-- Documento 2 -->
+          <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+            <span class="text-gray-700">Certificado de Nacimiento</span>
+            <span class="px-3 py-1 rounded-full text-white bg-green-500 text-sm">Aprobado</span>
+            <div class="flex items-center space-x-2">
+              <input type="file" class="text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              <button class="text-blue-600 hover:text-blue-800" title="Ver"><i data-lucide="eye" class="w-5 h-5"></i></button>
+              <button class="text-red-600 hover:text-red-800" title="Eliminar"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
+            </div>
+          </li>
+        </ul>
+      </details>
+
+      <!-- Contratación y Renovación Semestral -->
+      <details class="bg-white rounded-lg shadow p-4">
+        <summary class="text-lg font-semibold text-gray-700 cursor-pointer hover:text-blue-500">Contratación y Renovación Semestral</summary>
+        <ul class="mt-4 space-y-3 ml-4">
+          <!-- Documento 1 -->
+          <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+            <span class="text-gray-700">Anexos</span>
+            <span class="px-3 py-1 rounded-full text-white bg-red-600 text-sm">Rechazado</span>
+            <div class="flex items-center space-x-2">
+              <input type="file" class="text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              <button class="text-blue-600 hover:text-blue-800" title="Ver"><i data-lucide="eye" class="w-5 h-5"></i></button>
+              <button class="text-red-600 hover:text-red-800" title="Eliminar"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
+            </div>
+          </li>
+          <!-- Documento 2 -->
+          <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+            <span class="text-gray-700">Certificado de Nacimiento</span>
+            <span class="px-3 py-1 rounded-full text-white bg-green-600 text-sm">Aprobado</span>
+            <div class="flex items-center space-x-2">
+              <input type="file" class="text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              <button class="text-blue-600 hover:text-blue-800" title="Ver"><i data-lucide="eye" class="w-5 h-5"></i></button>
+              <button class="text-red-600 hover:text-red-800" title="Eliminar"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
+            </div>
+          </li>
+        </ul>
+      </details>
+
+      <!-- Durante el Transcurso del Contrato -->
+      <details class="bg-white rounded-lg shadow p-4">
+        <summary class="text-lg font-semibold text-gray-700 cursor-pointer hover:text-blue-500">Durante el Transcurso del Contrato</summary>
+        <ul class="mt-4 space-y-3 ml-4">
+            <!-- Documento 1 -->
+          <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+            <span class="text-gray-700">Horas Extras</span>
+            <span class="px-3 py-1 rounded-full text-white bg-red-600 text-sm">Rechazado</span>
+            <div class="flex items-center space-x-2">
+              <input type="file" class="text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              <button class="text-blue-600 hover:text-blue-800" title="Ver"><i data-lucide="eye" class="w-5 h-5"></i></button>
+              <button class="text-red-600 hover:text-red-800" title="Eliminar"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
+            </div>
+          </li>
+          <!-- Documento 2 -->
+          <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+            <span class="text-gray-700">Anexos</span>
+            <span class="px-3 py-1 rounded-full text-white bg-red-600 text-sm">Rechazado</span>
+            <div class="flex items-center space-x-2">
+              <input type="file" class="text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              <button class="text-blue-600 hover:text-blue-800" title="Ver"><i data-lucide="eye" class="w-5 h-5"></i></button>
+              <button class="text-red-600 hover:text-red-800" title="Eliminar"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
+            </div>
+          </li>
+        </ul>
+      </details>
+
+      <!-- Desvinculación (Solo personal finiquitado) -->
+      <details class="bg-white rounded-lg shadow p-4">
+        <summary class="text-lg font-semibold text-gray-700 cursor-pointer hover:text-blue-500">Desvinculación (Solo personal finiquitado)</summary>
+        <ul class="mt-4 space-y-3 ml-4">
+            <!-- Documento 1 -->
+          <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+            <span class="text-gray-700">Finiquito</span>
+            <span class="px-3 py-1 rounded-full text-white bg-green-600 text-sm">Aprobado</span>
+            <div class="flex items-center space-x-2">
+              <input type="file" class="text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              <button class="text-blue-600 hover:text-blue-800" title="Ver"><i data-lucide="eye" class="w-5 h-5"></i></button>
+              <button class="text-red-600 hover:text-red-800" title="Eliminar"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
+            </div>
+          </li>
+        </ul>
+      </details>
+
+      <!-- Capacitaciones -->
+      <details class="bg-white rounded-lg shadow p-4">
+        <summary class="text-lg font-semibold text-gray-700 cursor-pointer hover:text-blue-500">Capacitaciones</summary>
+        <ul class="mt-4 space-y-3 ml-4">
+            <!-- Documento 1 -->
+          <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+            <span class="text-gray-700">Capacitación 1</span>
+            <span class="px-3 py-1 rounded-full text-white bg-green-600 text-sm">Aprobado</span>
+            <div class="flex items-center space-x-2">
+              <input type="file" class="text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              <button class="text-blue-600 hover:text-blue-800" title="Ver"><i data-lucide="eye" class="w-5 h-5"></i></button>
+              <button class="text-red-600 hover:text-red-800" title="Eliminar"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
+            </div>
+          </li>
+          <!-- Documento 2 -->
+          <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+            <span class="text-gray-700">Capacitación 2</span>
+            <span class="px-3 py-1 rounded-full text-white bg-red-600 text-sm">Rechazado</span>
+            <div class="flex items-center space-x-2">
+              <input type="file" class="text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              <button class="text-blue-600 hover:text-blue-800" title="Ver"><i data-lucide="eye" class="w-5 h-5"></i></button>
+              <button class="text-red-600 hover:text-red-800" title="Eliminar"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
+            </div>
+          </li>
+            <!-- Documento 3 -->
+          <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+            <span class="text-gray-700">Capacitación 3</span>
+            <span class="px-3 py-1 rounded-full text-white bg-yellow-600 text-sm">Pendiente</span>
+            <div class="flex items-center space-x-2">
+              <input type="file" class="text-sm file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+              <button class="text-blue-600 hover:text-blue-800" title="Ver"><i data-lucide="eye" class="w-5 h-5"></i></button>
+              <button class="text-red-600 hover:text-red-800" title="Eliminar"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
+            </div>
+          </li>
+        </ul>
+      </details>
+
+      <div class="flex justify-end space-x-4 pt-6">
+        <form action="registro.html" method="get">
+          <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+              Editar Perfil
+          </button>
+      </form>
+        <form action="perfil.html" method="get">
+            <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Finalizar Registro
+            </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

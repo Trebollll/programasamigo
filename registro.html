@@ -1,0 +1,113 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas Amigo - Registro de Trabajadores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+            <div class="mb-8 text-center">
+                <h1 class="text-3xl font-bold text-gray-900">Registro de Trabajadores</h1>
+                <p class="mt-2 text-gray-600">Complete todos los campos requeridos</p>
+            </div>
+
+            <form id="workerForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="col-span-2">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Información Personal</h2>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Nombre Completo *</label>
+                        <input type="text" name="full_name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Nombre Completo">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Fecha de Nacimiento *</label>
+                        <input type="date" name="birth_date" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">RUT *</label>
+                        <input type="text" name="rut" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="XX.XXX.XXX-X">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Nacionalidad *</label>
+                        <select name="nationality" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option value="">Seleccionar Nacionalidad</option>
+                            <option value="chilena">Chilena</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="peruana">Peruana</option>
+                            <option value="otra">Otra</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Profesión</label>
+                        <input type="text" name="profession" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Profesión">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Email *</label>
+                        <input type="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="correo@ejemplo.com">
+                    </div>
+
+                    <div class="col-span-2">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Detalles Organizacionales</h2>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Departamento *</label>
+                        <select name="department" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option value="">Seleccionar Departamento</option>
+                            <option value="concepcion">Concepción</option>
+                            <option value="santiago">Santiago</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Imagen de Perfil</label>
+                        <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                            <div class="space-y-1 text-center">
+                                <div class="flex text-sm text-gray-600">
+                                    <label class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500">
+                                        <span>Subir archivo</span>
+                                        <input type="file" name="profile_image" accept="image/*" class="sr-only">
+                                    </label>
+                                </div>
+                                <p class="text-xs text-gray-500">PNG, JPG, GIF hasta 5MB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-2">
+                        <label class="block text-sm font-medium text-gray-700">Tipo de Contrato *</label>
+                        <div class="mt-2 space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="contract_type" value="fijo" class="form-radio text-blue-600">
+                                <span class="ml-2">Fijo</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="contract_type" value="indefinido" class="form-radio text-blue-600">
+                                <span class="ml-2">Indefinido</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end space-x-4 pt-6">
+                    <a href="gestion.html" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Gestión de Documentos
+                    </a>
+                    <a href="perfil.html" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Finalizar Registro
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
