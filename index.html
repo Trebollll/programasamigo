@@ -1,143 +1,139 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Listado de Empleados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      gap: 10px;
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    @media print {
+      input[type="file"], button {
+        display: none;
+      }
     }
-    header {
-      text-align: center;
-      margin-top: 20px;
+    
+    /* Menú desplegable */
+    #btn-menu {
+      display: none;
     }
-    h1 {
-      color: #007bff; /* Azul */
+    .menu-toggle {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 50;
     }
-    .filtros {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
+    .menu-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
     }
-    .filtros select, .filtros input[type="range"], .filtros input[type="text"] {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      min-width: 150px;
+    #btn-menu:checked ~ .menu-container {
+      display: block;
     }
-    .filtros button {
-      background-color: #007bff; /* Azul */
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
+    .side-menu {
+      background-color: #1c1c1c;
+      width: 250px;
+      height: 100%;
+      padding: 1.5rem 1rem;
+      position: relative;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
     }
-    .acciones-filtros {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    #btn-menu:checked ~ .menu-container .side-menu {
+      transform: translateX(0);
     }
-    .acciones-filtros a {
-      color: #007bff; /* Azul */
+    .side-menu a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: #c7c7c7;
       text-decoration: none;
-      font-size: 14px;
+      border-left: 4px solid transparent;
+      transition: 0.3s;
     }
-    .empleado-lista {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      max-width: 900px; /* Mantener la amplitud máxima */
-      width: 100%; /* Asegura que no se reduzca el contenedor */
-      margin: 20px auto;
-      padding: 0 15px; /* Espaciado interno */
+    .side-menu a:hover {
+      border-left-color: #c7c7c7;
+      background-color: #2a2a2a;
     }
-    .card {
-      background-color: white;
-      border: 1px solid #dee2e6;
-      border-left: 5px solid #007bff; /* Azul */
-      border-radius: 8px;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .card h3 {
-      margin: 0;
-      color: #007bff; /* Azul */
-    }
-    .card small {
-      color: #6c757d;
-      cursor: pointer;
-    }
-    .etiquetas span {
-      background-color: #e9ecef;
-      padding: 5px 10px;
-      margin-right: 5px;
-      border-radius: 5px;
-      font-size: 12px;
-    }
-    .postular-btn {
-      background-color: #007bff; /* Azul */
+    .close-menu {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
       color: white;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 5px;
+      font-size: 1.25rem;
       cursor: pointer;
-    }
-    .publicado {
-      text-align: right;
-      font-size: 12px;
-      color: #6c757d;
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800">
+<!-- Botón menú -->
+<input type="checkbox" id="btn-menu">
+<div class="menu-toggle">
+  <label for="btn-menu" class="cursor-pointer">
+    <i data-lucide="menu" class="w-6 h-6 text-blue-700"></i>
+  </label>
+</div>
+
+<!-- Menú desplegable -->
+<div class="menu-container">
+  <div class="side-menu">
+    <label for="btn-menu" class="close-menu">✕</label>
+    <div class="mt-12 mb-4">
+      <input type="text" placeholder="Buscar..." class="w-full px-3 py-2 rounded bg-gray-800 text-white placeholder-gray-400 focus:outline-none">
+    </div>
+    <nav>
+      <a href="index.html">Buscador</a>
+      <a href="registro.html">+Nueva Entrada</a>
+      <a href="#">Archivos Administración</a>
+      <a href="#">Modificar Categorías</a>
+      <a href="#">Manual de Cargos</a>
+      <a href="#">Cerrar Sesión</a>
+    </nav>
+  </div>
+</div>
+
   <header>
-    <h1>Listado de Empleados</h1>
+    <h1 class="text-2xl text-blue-700 text-center mt-6">Listado de Empleados</h1>
   </header>
-  <section class="filtros">
-    <input type="text" placeholder="Buscar por palabras...">
-    <select><option>Carrera</option><option>Todas</option></select>
-    <select><option>Modalidad</option><option>Todos</option></select>
-    <select><option>Región</option><option>Región Metropolitana</option></select>
-    <select><option>Comuna</option><option>Comuna</option></select>
-    <select><option>Jornada</option><option>Todas</option></select>
-    <select><option>Área de trabajo</option><option>Área de trabajo</option></select>
-    <div class="acciones-filtros">
-      <button>Buscar</button>
-      <a href="#">Limpiar filtros</a>
-      <a href="#">Más filtros ▼</a>
+  <section class="filtros flex flex-wrap justify-center gap-4 mt-6">
+    <input type="text" placeholder="Buscar por palabras..." class="px-3 py-2 border rounded">
+    <select class="px-3 py-2 border rounded"><option>Carrera</option><option>Todas</option></select>
+    <select class="px-3 py-2 border rounded"><option>Modalidad</option><option>Todos</option></select>
+    <select class="px-3 py-2 border rounded"><option>Región</option><option>Región Metropolitana</option></select>
+    <select class="px-3 py-2 border rounded"><option>Comuna</option><option>Comuna</option></select>
+    <select class="px-3 py-2 border rounded"><option>Jornada</option><option>Todas</option></select>
+    <select class="px-3 py-2 border rounded"><option>Área de trabajo</option><option>Área de trabajo</option></select>
+    <div class="acciones-filtros flex items-center gap-2">
+      <button class="bg-blue-600 text-white px-4 py-2 rounded">Buscar</button>
+      <a href="#" class="text-blue-600 text-sm">Limpiar filtros</a>
+      <a href="#" class="text-blue-600 text-sm">Más filtros ▼</a>
     </div>
   </section>
-  <section class="empleado-lista">
-    <div class="card">
+  <section class="empleado-lista max-w-3xl mx-auto mt-6 px-4">
+    <div class="card bg-white border border-gray-300 shadow-md rounded-lg p-4 flex justify-between items-center">
       <div>
-        <h3>Juan Pérez</h3>
-        <div class="etiquetas">
-          <span>Tecnología</span>
-          <span>Full-time</span>
-          <span>Santiago</span>
+        <h3 class="text-blue-700 font-bold">Juan Pérez</h3>
+        <div class="etiquetas mt-2">
+          <span class="bg-gray-200 px-2 py-1 rounded text-sm">Tecnología</span>
+          <span class="bg-gray-200 px-2 py-1 rounded text-sm">Full-time</span>
+          <span class="bg-gray-200 px-2 py-1 rounded text-sm">Santiago</span>
         </div>
       </div>
-      <div class="publicado">
+      <div class="publicado text-right">
         <a href="perfil.html">
-          <button class="postular-btn">Ver más</button>
+          <button class="postular-btn bg-blue-600 text-white px-4 py-2 rounded">Ver más</button>
         </a>
       </div>
     </div>
   </section>
+
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
-
