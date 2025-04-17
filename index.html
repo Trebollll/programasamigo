@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +12,7 @@
         display: none;
       }
     }
-    
+
     /* Menú desplegable */
     #btn-menu {
       display: none;
@@ -97,43 +96,142 @@
   </div>
 </div>
 
-  <header>
-    <h1 class="text-2xl text-blue-700 text-center mt-6">Listado de Empleados</h1>
-  </header>
-  <section class="filtros flex flex-wrap justify-center gap-4 mt-6">
-    <input type="text" placeholder="Buscar por palabras..." class="px-3 py-2 border rounded">
-    <select class="px-3 py-2 border rounded"><option>Carrera</option><option>Todas</option></select>
-    <select class="px-3 py-2 border rounded"><option>Modalidad</option><option>Todos</option></select>
-    <select class="px-3 py-2 border rounded"><option>Región</option><option>Región Metropolitana</option></select>
-    <select class="px-3 py-2 border rounded"><option>Comuna</option><option>Comuna</option></select>
-    <select class="px-3 py-2 border rounded"><option>Jornada</option><option>Todas</option></select>
-    <select class="px-3 py-2 border rounded"><option>Área de trabajo</option><option>Área de trabajo</option></select>
-    <div class="acciones-filtros flex items-center gap-2">
-      <button class="bg-blue-600 text-white px-4 py-2 rounded">Buscar</button>
-      <a href="#" class="text-blue-600 text-sm">Limpiar filtros</a>
-      <a href="#" class="text-blue-600 text-sm">Más filtros ▼</a>
-    </div>
-  </section>
-  <section class="empleado-lista max-w-3xl mx-auto mt-6 px-4">
-    <div class="card bg-white border border-gray-300 shadow-md rounded-lg p-4 flex justify-between items-center">
-      <div>
-        <h3 class="text-blue-700 font-bold">Juan Pérez</h3>
-        <div class="etiquetas mt-2">
-          <span class="bg-gray-200 px-2 py-1 rounded text-sm">Tecnología</span>
-          <span class="bg-gray-200 px-2 py-1 rounded text-sm">Full-time</span>
-          <span class="bg-gray-200 px-2 py-1 rounded text-sm">Santiago</span>
-        </div>
-      </div>
-      <div class="publicado text-right">
-        <a href="perfil.html">
-          <button class="postular-btn bg-blue-600 text-white px-4 py-2 rounded">Ver más</button>
-        </a>
-      </div>
-    </div>
-  </section>
+<header>
+  <h1 class="text-2xl text-blue-700 text-center mt-6">Listado de Empleados</h1>
+</header>
 
-  <script>
-    lucide.createIcons();
-  </script>
+<section class="filtros flex flex-wrap justify-center gap-4 mt-6">
+  <input type="text" placeholder="Nombre..." class="px-3 py-2 border rounded">
+    <select class="px-3 py-2 border rounded"><option>Programas</option>
+      <option>FAE Arboleda - 1051267</option>
+      <option>FAE Arica y Parinacota - 1150139</option>
+      <option>FAE Petorca - 1051265</option>
+      <option>FAE PRO Aysén - 1110190 - 1110191</option>
+      <option>FAE Provincia del Huasco - 1030264</option>
+      <option>FAE Valparaíso - 1051430</option>
+      <option>PIE Arauco - 1081181</option>
+      <option>PPF Tamarugal - 1010296</option>
+      <option>REM PER Entre Ríos - 1090747 - 1090748</option>
+      <option>REM PER Lagunas del Parque - 1090734 - 1090735</option>
+      <option>Administración Centralizada - 1750</option>
+    </select>
+    <select class="px-3 py-2 border rounded"><option>Sexo</option>
+      <option>Masculino</option>
+      <option>Femenino</option>
+    </select>
+    <select class="px-3 py-2 border rounded"><option>Región</option><option>Región Metropolitana</option></select>
+    <select class="px-3 py-2 border rounded"><option>4° Medio Completo</option>
+      <option>Si</option>
+      <option>No</option>
+    </select>
+
+  <!-- Filtros adicionales ocultos -->
+  <div id="filtros-extra" class="hidden flex flex-wrap gap-4 mt-4 w-full justify-center">
+    <select class="px-3 py-2 border rounded"><option>Tipo de título</option>
+      <option>Ninguno</option>
+      <option>Técnico</option>
+      <option>Profesional</option>
+    </select>
+    <select class="px-3 py-2 border rounded"><option>Estado</option>
+      <option>Contratado</option>
+      <option>Finiquitado</option>
+    </select>
+    <select class="px-3 py-2 border rounded"><option>Tipo de contrato</option>
+      <option>Plazo Fijo 1</option>
+      <option>Plazo Fijo 2</option>
+      <option>Indefinido</option>
+    </select>
+    <select class="px-3 py-2 border rounded"><option>Cargo</option>
+      <option>Abogado</option>
+      <option>Auxiliar de Aseo</option>
+      <option>Auxiliar de Aseo y Lavanderia</option>
+      <option>Coordinador Residencial</option>
+      <option>Coordinador Técnico</option>
+      <option>Dirección Nacional</option>
+      <option>Director</option>
+      <option>Director Ejecutivo</option>
+      <option>Educador de Trato Directo</option>
+      <option>Educador Diferencial</option>
+      <option>Educador Social</option>
+      <option>Encargado de Casos</option>
+      <option>Encargado de Recursos Humanos</option>
+      <option>Encargado de Salud</option>
+      <option>Fonoaudiólogo</option>
+      <option>Gestor de Inclusión Laboral</option>
+      <option>Gestor Intersectorial</option>
+      <option>Jefe Técnico</option>
+      <option>Manipulador de Alimentos</option>
+      <option>Preparador Físico</option>
+      <option>Prevencionista de Riesgos</option>
+      <option>Psicoeducador</option>
+      <option>Psicólogo Evaluador</option>
+      <option>Psicólogo Interventor</option>
+      <option>Psicopedagogo</option>
+      <option>Responsable de Prevención de delitos</option>
+      <option>Secretaria</option>
+      <option>Secretaria General</option>
+      <option>Subdirector Administrativo y de Personal</option>
+      <option>Subdirector de Gestión de Calidad</option>
+      <option>Subdirector Financiero</option>
+      <option>Subdirector Técnico</option>
+      <option>Tallerista</option>
+      <option>Técnico Social</option>
+      <option>TENS</option>
+      <option>Terapeuta Ocupacional</option>
+      <option>Trabajador Social</option>
+    </select>
+  </div>
+
+  <div class="acciones-filtros flex items-center gap-2">
+    <button class="bg-blue-600 text-white px-4 py-2 rounded">Buscar</button>
+    <button id="limpiar-filtros" class="text-blue-600 text-sm">Limpiar filtros</button>
+    <button id="toggle-filtros" class="text-blue-600 text-sm">Más filtros ▼</button>
+  </div>
+</section>
+
+<section class="empleado-lista max-w-3xl mx-auto mt-6 px-4">
+  <div class="card bg-white border border-gray-300 shadow-md rounded-lg p-4 flex justify-between items-center">
+    <div>
+      <h3 class="text-blue-700 font-bold">Juan Pérez</h3>
+      <div class="etiquetas mt-2">
+        <span class="bg-gray-200 px-2 py-1 rounded text-sm">Informática</span>
+        <span class="bg-gray-200 px-2 py-1 rounded text-sm">Full-time</span>
+        <span class="bg-gray-200 px-2 py-1 rounded text-sm">Santiago</span>
+      </div>
+    </div>
+    <div class="publicado text-right">
+      <a href="perfil.html">
+        <button class="postular-btn bg-blue-600 text-white px-4 py-2 rounded">Ver más</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  lucide.createIcons();
+
+  // Mostrar/Ocultar filtros extra
+  const toggleBtn = document.getElementById('toggle-filtros');
+  const filtrosExtra = document.getElementById('filtros-extra');
+  let filtrosVisibles = false;
+
+  toggleBtn.addEventListener('click', () => {
+    filtrosVisibles = !filtrosVisibles;
+    filtrosExtra.classList.toggle('hidden', !filtrosVisibles);
+    toggleBtn.textContent = filtrosVisibles ? 'Menos filtros ▲' : 'Más filtros ▼';
+  });
+
+  // Limpiar filtros
+  document.getElementById('limpiar-filtros').addEventListener('click', () => {
+    const filtros = document.querySelectorAll('.filtros input, .filtros select');
+    filtros.forEach(filtro => {
+      if (filtro.tagName === 'SELECT') {
+        filtro.selectedIndex = 0;
+      } else {
+        filtro.value = '';
+      }
+    });
+  });
+</script>
 </body>
 </html>
