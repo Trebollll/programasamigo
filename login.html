@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas Amigo - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center login-bg">
+        <div class="card login-card shadow-lg">
+            <div class="card-body p-4 p-md-5">
+                <div class="text-center mb-4">
+                    <img src="./assets/img/login/logo-programas-amigo.png" alt="Programas Amigo Logo" class="login-logo mb-3">
+                    <h2 class="fw-bold">Programas Amigo Administración RR.HH.</h2>
+                </div>
+                <form id="loginForm" class="needs-validation" novalidate>
+                    <div class="mb-4 position-relative">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="invalid-feedback">Por favor ingrese un correo válido</div>
+                    </div>
+                    <div class="mb-4 position-relative">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                            <input type="password" class="form-control" id="password" placeholder="Contraseña" required minlength="8">
+                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                        <div class="invalid-feedback">La contraseña debe tener al menos 8 caracteres</div>
+                    </div>
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Recordarme</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mb-3 position-relative">
+                        <span>Iniciar Sesión</span>
+                        <div class="spinner-border spinner-border-sm position-absolute top-50 start-50 translate-middle d-none" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                    </button>
+                    <button type="button" class="btn btn-secondary w-100 mb-3">Crear Usuario</button>
+                    <div class="text-center">
+                        <a href="#" class="text-decoration-underline forgot-password">Olvidé mi contraseña</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
