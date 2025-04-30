@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>+Nueva Entrada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e6f3ff 0%, #b5d8ff 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: #1a365d;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #4299e1, #63b3ed);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c5282;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .profile-picture {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .profile-picture-preview {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 3px solid #4299e1;
+            background-color: #f7fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .profile-picture-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .file-input-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4299e1;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-input-button:hover {
+            background-color: #2b6cb0;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Perfil Profesional</h1>
+        
+        <form>
+            <div class="profile-picture">
+                <div class="profile-picture-preview">
+                    <img id="preview" src="https://via.placeholder.com/150" alt="Vista previa">
+            </div>
+                <div class="file-input-wrapper">
+                    <label class="file-input-button" for="profile-photo">
+                        Cambiar Foto
+                    </label>
+                    <input type="file" id="profile-photo" accept="image/*" onchange="previewImage(event)">
+            </div>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico Personal</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Correo Electrónico Institucional</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: +34 612345678">
+            </div>
+
+            <div class="form-group">
+                <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+            </div>
+
+            <div class="form-group">
+                <label for="genero">Género</label>
+                <select id="genero" name="genero">
+                    <option value="">Seleccionar</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                    <option value="no-especificar">Prefiero no especificar</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="pais">País</label>
+                <input type="text" id="pais" name="pais" placeholder="Ej: España">
+    </div>
+
+            <div class="form-group">
+                <label for="biografia">Biografía Profesional</label>
+                <textarea id="biografia" name="biografia" 
+                    placeholder="Describe tu experiencia profesional y objetivos..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Guardar Perfil</button>
+        </form>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const preview = document.getElementById('preview');
+                preview.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>
